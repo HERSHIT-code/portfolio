@@ -1,0 +1,78 @@
+
+.header{
+    padding: 60px 10px;
+        &__nav{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        &__left-logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            transition: 500ms;
+                &:hover{
+                    transform: scale(1.2);
+                }
+            &-img{
+                width: 16px;
+                height: 16px;
+            }
+            &-title{
+                font-family: var(--font-family);
+                font-weight: 700;
+                font-size: 16px;
+                color: var(--white);
+            }
+
+        }
+        &__right{
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            &-links{
+                display: flex;
+                cursor: pointer;
+                transition: 500ms;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+            &-link{
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 16px;
+                color: var(--gray);
+                
+            }
+            &-lang{
+                font-family: var(--font-family);
+                font-weight: 600;
+                font-size: 16px;
+                color: var(--gray);
+                cursor: pointer;
+                transition: 500ms;
+                &:hover{
+                    transform: scale(1.2);
+                }
+                
+            }
+            &-theme{
+                width: 30px;
+                height: 30px;
+                cursor: pointer;
+                transition: 500ms;
+                &:hover{
+                    transform: scale(1.15);
+                }
+            }
+        }
+}
+
+
+
+
+.active p{
+    color: var(--white);
+}
