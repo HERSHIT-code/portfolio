@@ -1,5 +1,5 @@
 import { type FC } from 'react'
-import { cross, hashTag, logoDefault } from '../../helpers/reExport'
+import { cross, hashTag} from '../../helpers/reExport'
 import { NavLink } from 'react-router-dom'
 import './Burger.scss'
 

@@ -1,9 +1,10 @@
-import React from 'react'
+
+import type { FC } from 'react'
 import { discord, email, hashTag } from '../../helpers/reExport'
 import './Contacts.scss'
 import { useTranslation } from 'react-i18next'
 
-const Contacts = () => {
+const Contacts:FC = () => {
     const { t } = useTranslation()
   return (
     <div className="container">

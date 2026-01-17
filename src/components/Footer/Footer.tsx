@@ -1,7 +1,7 @@
 import { type FC } from 'react'
 import './Footer.scss'  
-import { discord, email, hashTag, logoDefault } from '../../helpers/reExport'
-import { NavLink } from 'react-router-dom'
+import { discord, email, logoDefault } from '../../helpers/reExport'
+
 import { t } from 'i18next'
 
 const Footer:FC = () => {

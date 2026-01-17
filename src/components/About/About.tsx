@@ -1,4 +1,4 @@
-import React, { type FC } from 'react'
+import { type FC } from 'react'
 import './About.scss'
 import { about, hashTag } from '../../helpers/reExport'
 import { useTranslation } from 'react-i18next'

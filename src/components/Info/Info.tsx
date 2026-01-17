@@ -1,5 +1,5 @@
-import React, { type FC } from 'react'
-import { Link } from 'react-router-dom'
+import { type FC } from 'react'
+
 import './Info.scss'
 import Button from '../Button/Button'
 import { dots, guy, hashTag, kavichki, logoLight } from '../../helpers/reExport'
@@ -55,7 +55,7 @@ const Info:FC= () => {
             <span className="projects__top-line"></span>
         </div>
         <div className="projects__block">
-            {data && data.map((item:any, i:any) =>(
+            {data && data.map((item:any, _:any) =>(
                 console.log(item),
                 
                 <ProjectsItem key={item.id} item={item} />
