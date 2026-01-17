@@ -1,0 +1,27 @@
+{
+    "headerHome": "home",
+    "headerProjects": "projects",
+    "headerAbout": "aboutMe",
+    "skills": "skills",
+    "headerContacts": "contacts",
+    "infoLeftTitleOne": "Elias is a ",
+    "infoLeftTitleTwo": "web designer",
+    "infoLeftTitleThree": " and ",
+    "infoLeftTitleFour": "front-end developer",
+    "infoLeftText": "He crafts responsive websites where technologies meet creativity",
+    "infoRightTextOne":"Currently working on ",
+    "infoRightTextTwo":"Portfolio",
+    "api": "FULL API COMING SOON",
+    "phrasesFirst": "With great power comes great electricity bill",
+    "phrasesSecond": "- Dr. Who",
+    "aboutLeftTextOne": "Hello, i’m Elias!",
+    "aboutLeftTextTwo": "I’m a self-taught front-end developer based in Kyiv, Ukraine. I can develop responsive websites from scratch and raise them into modern user-friendly web experiences.",
+    "aboutLeftTextThree": "Transforming my creativity and knowledge into a websites has been my passion for over a year. I have been helping various clients to establish their presence online. I always strive to learn about the newest technologies and frameworks.",
+    "contactsLeftText": "I’m interested in freelance opportunities. However, if you have other request or question, don’t hesitate to contact me",
+    "contactsRightTitle":"Contact me here",
+    "footerLeftText": "Web designer and front-end developer",
+    "visit": "Visit",
+    "more": "Contact me!",
+    "noDiscription": "No description written yet"
+
+}

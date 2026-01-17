@@ -6,6 +6,13 @@
 	--background: #282c33;
 	--white: #fff;
 }
+.dark {
+  --font-family: "FiraCode", sans-serif;
+  --primary: #c778dd;
+	--gray: #abb2bf;
+	--background: #282c33;
+	--white: #fff;
+}
 
 *{
     margin: 0;
@@ -28,9 +35,10 @@ input{
     outline: none;
 }
 .container{
-    max-width: 1224px;
+    max-width: 1354px;
     margin: 0 auto;
     width: 100%;
+    padding: 0px 50px;
 }
 body{
     background-color: var(--background);

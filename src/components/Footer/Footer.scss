@@ -1,0 +1,86 @@
+.footer{
+    width: 100%;
+    border-top: 1px solid var(--white);
+    padding: 60px 0 30px 0;
+    &__left{
+        display: flex;
+        flex-direction: column;
+        
+        gap: 15px;
+        &-text{
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            color: var(--white);
+        }
+        &-box{
+            display: flex;
+            align-items: center;
+            gap: 20px;
+           @media (max-width: 800px) {
+            
+            justify-content: center;
+        }
+            &-title{
+                font-family: var(--font-family);
+                font-weight: 500;
+                font-size: 16px;
+                color: var(--white);
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                 
+                img{
+                    width: 16px;
+                    height: 16px;
+                }
+            }
+            &-text{
+                font-family: var(--font-family);
+                font-weight: 400;
+                font-size: 16px;
+                color: var(--gray);
+            }
+
+        }
+    }
+    &__right{
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+        &-text{
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 24px;
+            color: var(--white);
+        }
+        &-box{
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+    }
+    &__top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 40px;
+        @media (max-width: 800px) {
+            flex-direction: column;
+            gap: 30px;
+            text-align: center;
+        }
+    }
+    &__bottom{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &-text{
+            font-family: var(--font-family);
+            font-weight: 400;
+            font-size: 16px;
+            color: var(--gray);
+        }
+    }
+}
