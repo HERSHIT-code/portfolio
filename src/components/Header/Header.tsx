@@ -4,7 +4,7 @@ import { burger, hashTag, logoDefault, logoLight, menu } from "../../helpers/reE
 import "./Header.scss"
 import Burger from "../Burger/Burger"
 import { useTranslation } from "react-i18next"
-import { changeLanguage } from "i18next"
+
 
 const Header:FC = () => {
     const [logo, setLogo] = useState(false)
