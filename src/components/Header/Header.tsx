@@ -72,7 +72,7 @@ const Header:FC = () => {
             }} alt="" className="header__right-theme" />
             <div className="header__burger">
                 <img src={logo ? menu  : burger} alt="" onClick={() => isModalOpen ? '' : setIsModalOpen(true)} className="header__burger-open" />
-                {isModalOpen && <Burger logoInfo={logoInfo} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>}
+                {isModalOpen && <Burger logoInfo={logoInfo} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} changeLang={changeLang} />}
             </div>
         </nav>
 
