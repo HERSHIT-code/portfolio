@@ -134,18 +134,28 @@ const Info: FC = () => {
 
     {/* Карточки — чётные снизу, нечётные сверху */}
     <div className="projects__block">
-    {data && data.map((item: any, i: number) => (
-        <motion.div
-            key={item.id}
-            initial={{ opacity: 0, y: 60 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.05 }}
-        >
-            <ProjectsItem item={item} />
-        </motion.div>
-    ))}
+    {data && data.slice(0, 3).map((item: any, i: number) => (
+    <motion.div
+        key={item.id}
+        initial={{ opacity: 0, y: 60 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.5, ease: "easeOut", delay: i * 0.05 }}
+    >
+        <ProjectsItem item={item} />
+    </motion.div>
+))}
+
 </div>
+<motion.div
+    className="projects__link"
+    initial={{ opacity: 0, y: 60 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    viewport={{ once: false }}
+    transition={{ duration: 0.5, ease: "easeOut" }}
+>
+    <a href="/projects" className="projects__link-text">View all {"==>"}</a>
+</motion.div>
 </div>
 
             </div>

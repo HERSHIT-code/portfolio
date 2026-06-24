@@ -133,6 +133,22 @@
 }
 .projects{
     padding-top: 100px;
+    &__link{
+
+        display: flex;
+        justify-content: end;
+        margin: 50px 0 0 0;
+        &-text{
+            font-family: var(--font-family);
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--white);
+            border: 1px solid var(--primary);
+            
+            padding: 8px 16px;
+
+        }
+    }
     &__top{
         display: flex;
         align-items: center;

@@ -12,7 +12,7 @@ const Footer:FC = () => {
             <div className="footer__top">
                 <div className="footer__left">
                     <div className="footer__left-box">
-                        <p className="footer__left-box-title"><img src={logoDefault} alt="" /> Alios </p>
+                        <p className="footer__left-box-title"><img src={logoDefault} alt="" /> HERSHIT </p>
                         <p className="footer__left-box-text">scorpotpro@gmail.com</p>
                     </div>
                     <p className="footer__left-text">{t("footerLeftText")}</p>
@@ -26,7 +26,7 @@ const Footer:FC = () => {
                 </div>
             </div>
             <div className="footer__bottom">
-                <p className="footer__bottom-text">© Copyright 2022. Made by Alias</p>
+                <p className="footer__bottom-text">© Copyright 2022. Made by HERSHIT</p>
             </div>
         </div>
     </footer>

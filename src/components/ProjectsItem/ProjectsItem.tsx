@@ -21,7 +21,7 @@ const ProjectsItem:FC<IItem> = ({ item }) => {
         <div className="projects__item-text-box">
           <h2 className="projects__item-title">{item.name}</h2>
           <p className="projects__item-description">{item.description ? item.description : t("noDiscription")}</p>
-          <a href={item.html_url} className="projects__item-btn">{t("visit")} <span>{'<~>'}</span></a>
+          <a href={item.html_url} target="_blank" rel="noopener noreferrer" className="projects__item-btn">{t("visit")} <span>{'<~>'}</span></a>
         </div>
         
     </div>

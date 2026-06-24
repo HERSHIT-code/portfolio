@@ -18,7 +18,7 @@ const Burger:FC<BurgerProps> = ({ logoInfo, isModalOpen, setIsModalOpen, changeL
          <div className="burger__top">
             <div className="burger__top-logo">
                 <img className="burger__top-logo-img" src={logoInfo} alt="Logo" />
-                    <h2 className="burger__top-logo-title">Alios</h2>
+                    <h2 className="burger__top-logo-title">HERSHIT</h2>
             </div>
             <img src={cross} alt="" onClick={() => isModalOpen ? setIsModalOpen(false) : ''} className="burger__top-close" />
 

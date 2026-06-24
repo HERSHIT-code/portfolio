@@ -1,4 +1,4 @@
-import { useState, type FC } from "react"
+import { useState, useEffect, type FC } from "react"
 import { Link, NavLink } from "react-router-dom"
 import { motion, AnimatePresence } from "framer-motion"
 import { burger, hashTag, logoDefault, logoLight, menu } from "../../helpers/reExport"
@@ -8,24 +8,53 @@ import { useTranslation } from "react-i18next"
 
 const Header: FC = () => {
     const [logo, setLogo] = useState(false)
-    const logoInfo = logo ? logoDefault : logoLight
+    const logoInfo = logo ? logoLight : logoDefault
     const [isModalOpen, setIsModalOpen] = useState(false)
     const [theme, setTheme] = useState("light")
 
     const { t, i18n } = useTranslation()
+
+    
+    // Читаем тему и язык из localStorage при загрузке
+    useEffect(() => {
+        const savedTheme = localStorage.getItem("theme")
+        if (savedTheme) {
+            setTheme(savedTheme)
+            setLogo(savedTheme === "dark")
+            if (savedTheme === "dark") {
+                document.documentElement.style.setProperty("--gray", "#6b7280")
+                document.documentElement.style.setProperty("--background", "#d1d5db")
+                document.documentElement.style.setProperty("--primary", "#a855a8")
+                document.documentElement.style.setProperty("--white", "#1f2937")
+            } else {
+                document.documentElement.style.setProperty("--gray", "#abb2bf")
+                document.documentElement.style.setProperty("--background", "#282c33")
+                document.documentElement.style.setProperty("--primary", "#c778dd")
+                document.documentElement.style.setProperty("--white", "#fff")
+            }
+        }
+
+        const savedLang = localStorage.getItem("lang")
+        if (savedLang) i18n.changeLanguage(savedLang)
+    }, [])
+
     const changeLang = () => {
-        const newLang = i18n.language == 'ru' ? 'en' : 'ru'
+        const newLang = i18n.language === 'ru' ? 'en' : 'ru'
         i18n.changeLanguage(newLang)
+        localStorage.setItem("lang", newLang)
     }
 
     const toggleTheme = () => {
         setLogo(!logo)
-        theme === "light" ? setTheme("dark") : setTheme("light")
-        if (theme === "light") {
-            document.documentElement.style.setProperty("--gray", "#282c33")
-            document.documentElement.style.setProperty("--background", "#abb2bf")
-            document.documentElement.style.setProperty("--primary", "#c778dd")
-            document.documentElement.style.setProperty("--white", "#000")
+        const newTheme = theme === "light" ? "dark" : "light"
+        setTheme(newTheme)
+        localStorage.setItem("theme", newTheme)
+
+        if (newTheme === "dark") {
+            document.documentElement.style.setProperty("--gray", "#6b7280")
+            document.documentElement.style.setProperty("--background", "#d1d5db")
+            document.documentElement.style.setProperty("--primary", "#a855a8")
+            document.documentElement.style.setProperty("--white", "#1f2937")
         } else {
             document.documentElement.style.setProperty("--gray", "#abb2bf")
             document.documentElement.style.setProperty("--background", "#282c33")
@@ -43,7 +72,6 @@ const Header: FC = () => {
 
     return (
         <>
-            {/* Хедер появляется сверху — 1 секунда */}
             <motion.header
                 className="header"
                 initial={{ y: -80, opacity: 0 }}
@@ -54,7 +82,6 @@ const Header: FC = () => {
                 <div className="container">
                     <nav className="header__nav">
 
-                        {/* Логотип въезжает слева — 1 секунда */}
                         <motion.div
                             className="header__left"
                             initial={{ opacity: 0, x: -40 }}
@@ -70,11 +97,10 @@ const Header: FC = () => {
                                     whileHover={{ rotate: 360, scale: 1.1 }}
                                     transition={{ duration: 0.6 }}
                                 />
-                                <h2 className="header__left-logo-title">Alios</h2>
+                                <h2 className="header__left-logo-title">HERSHIT</h2>
                             </Link>
                         </motion.div>
 
-                        {/* Навигационные ссылки — stagger по 1 секунде */}
                         <div className="header__right">
                             {navLinks.map(({ to, label }, i) => (
                                 <motion.div
@@ -96,7 +122,6 @@ const Header: FC = () => {
                                 </motion.div>
                             ))}
 
-                            {/* Кнопка языка */}
                             <motion.p
                                 className="header__right-lang"
                                 style={{ cursor: 'pointer' }}
@@ -108,11 +133,10 @@ const Header: FC = () => {
                                 whileHover={{ scale: 1.15, color: "#c778dd" }}
                                 whileTap={{ scale: 0.9 }}
                             >
-                                {i18n.language == 'ru' ? 'RU' : 'EN'}
+                                {i18n.language === 'ru' ? 'RU' : 'EN'}
                             </motion.p>
                         </div>
 
-                        {/* Кнопка темы */}
                         <motion.img
                             src={logoInfo}
                             onClick={toggleTheme}
@@ -126,7 +150,6 @@ const Header: FC = () => {
                             whileTap={{ rotate: 180, scale: 0.9 }}
                         />
 
-                        {/* Бургер */}
                         <motion.div
                             className="header__burger"
                             initial={{ opacity: 0, x: 40 }}
@@ -144,7 +167,6 @@ const Header: FC = () => {
                                 transition={{ type: "spring", stiffness: 400 }}
                             />
 
-                            {/* Бургер-меню плавно выезжает справа */}
                             <AnimatePresence>
                                 {isModalOpen && (
                                     <motion.div
